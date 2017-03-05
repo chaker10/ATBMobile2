@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.chaker.atbmobile.Menu"
+    android:background="@drawable/atb2">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cap1"
+            android:id="@+id/imageView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="Bienvenue sur ATB Mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="@color/colorAccent"
+            android:id="@+id/txt_benv"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="194dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="185dp"
+                android:layout_height="145dp"
+                android:weightSum="1">
+
+                <EditText
+                    android:layout_width="151dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editcompte" />
+
+                <Button
+                    android:text="Compte"
+                    android:layout_width="148dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:id="@+id/btn_compte"
+                    android:layout_marginBottom="64dp"
+                    android:onClick="btn_compte"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_weight="0.35" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="149dp"
+                android:layout_height="125dp"
+                android:weightSum="1">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/editcarte" />
+
+                <Button
+                    android:text="Carte"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:id="@+id/btn_carte"
+                    android:layout_marginBottom="64dp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_weight="0.22"
+                    android:onClick="btn_carte"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.03">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="179dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/edi_cheque" />
+
+                <Button
+                    android:text="Cheque"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:id="@+id/btn_cheque"
+                    android:layout_marginBottom="64dp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:onClick="btn_cheque"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="182dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/edit_virment" />
+
+                <Button
+                    android:text="Virement"
+                    android:layout_width="154dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:id="@+id/btn_virement"
+                    android:layout_marginBottom="64dp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:onClick="btn_virement"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
