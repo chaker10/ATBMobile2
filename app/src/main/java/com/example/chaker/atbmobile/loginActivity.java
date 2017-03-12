@@ -19,19 +19,27 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 public class loginActivity extends AppCompatActivity {
     EditText etUserName;
-    EditText etPassword;
+    EditText etPassword,type,numcompte;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         etUserName=(EditText)findViewById(R.id.etUserName);
         etPassword=(EditText)findViewById(R.id.etPassword);
+     /*   type=(EditText)findViewById(R.id.edittypec);
+        numcompte=(EditText)findViewById(R.id.editnumc);*/
+
+
     }
     public void buLogin(View view) {
 
-        String url="http://10.0.2.2/app/login.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString();
+        String url="http://chakerrahmani.esy.es/login.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString();
+     //   String url1="http://10.0.2.2/app/compte.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString()+"type="+
+           //     type.getText().toString();
 
         new MyAsyncTaskgetNews().execute(url);
+    //    new MyAsyncTaskgetNews().execute(url1);
     }
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
@@ -43,22 +51,25 @@ public class loginActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
             try {
                 String NewsData;
-                //define the url we have to connect with
+                //definir l'url avec lequel nous devons nous connecter
+
                 URL url = new URL(params[0]);
-                //make connect with url and send request
+                // faire la connexion  avec url et envoyer la demande
+
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                //waiting for 7000ms for response
-                urlConnection.setConnectTimeout(7000);//set timeout to 5 seconds
+
+                //attente de 7000ms pour reponse
+                urlConnection.setConnectTimeout(7000);//regler le délai 5 secondes
 
                 try {
-                    //getting the response data
+                    //obtenir les donnnes de reponse
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    //convert the stream to string
+                    //convertir fe flux en chaine
                     NewsData = ConvertInputToStringNoChange(in);
-                    //send to display data
+                    //envoyer pour afficher les données
                     publishProgress(NewsData);
                 } finally {
-                    //end connection
+                    //connection
                     urlConnection.disconnect();
                 }
 
@@ -69,8 +80,8 @@ public class loginActivity extends AppCompatActivity {
 
             try {
                 JSONObject json= new JSONObject(progress[0]);
-                //cannot login
-               // Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
+                //vous ne pouvez pas vous connecter
+              //   Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
                 if (json.getString("msg").equals("ok")){
                     Intent i=new Intent(loginActivity.this,Menu.class);
@@ -79,9 +90,11 @@ public class loginActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(),"welecom",Toast.LENGTH_LONG).show();
                     etPassword.getText().clear();
+                    Toast.makeText(getApplicationContext(),"type"+type+"et"+"numcompte"+numcompte+"",Toast.LENGTH_SHORT).show();
+
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"errone",Toast.LENGTH_LONG).show();}
+                    Toast.makeText(getApplicationContext(),"verifier le login ou password",Toast.LENGTH_LONG).show();}
 
 
             } catch (Exception ex) {
@@ -100,7 +113,7 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-    // this method convert any stream to string
+    // cette methode convertit tous flux en chaine
     public static String ConvertInputToStringNoChange(InputStream inputStream) {
 
         BufferedReader bureader=new BufferedReader( new InputStreamReader(inputStream));
@@ -124,3 +137,4 @@ public class loginActivity extends AppCompatActivity {
 
 
 }
+

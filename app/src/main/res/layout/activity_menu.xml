@@ -54,23 +54,21 @@
                 android:layout_height="145dp"
                 android:weightSum="1">
 
-                <EditText
-                    android:layout_width="151dp"
+                <ImageButton
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/editcompte" />
+                    app:srcCompat="@drawable/cheque"
+                    android:id="@+id/chequeclik"
+                    android:onClick="chequeclik"/>
 
-                <Button
-                    android:text="Compte"
-                    android:layout_width="148dp"
+                <TextView
+                    android:text="Cheques"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/txtcheque5"
                     android:textStyle="bold"
-                    android:id="@+id/btn_compte"
-                    android:layout_marginBottom="64dp"
-                    android:onClick="btn_compte"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_weight="0.35" />
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
 
@@ -80,23 +78,21 @@
                 android:layout_height="125dp"
                 android:weightSum="1">
 
-                <EditText
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/cartre1"
+                    android:id="@+id/carteclik"
+                    android:onClick="carteclik"/>
+
+                <TextView
+                    android:text="Cartes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/editcarte" />
-
-                <Button
-                    android:text="Carte"
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/txtcarte2"
                     android:textStyle="bold"
-                    android:id="@+id/btn_carte"
-                    android:layout_marginBottom="64dp"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_weight="0.22"
-                    android:onClick="btn_carte"/>
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
 
@@ -113,23 +109,21 @@
                 android:layout_width="179dp"
                 android:layout_height="match_parent">
 
-                <EditText
+                <ImageButton
+                    android:layout_width="108dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/cheque5"
+                    android:id="@+id/compteclik"
+                    android:onClick="compteclik (Menu)"/>
+
+                <TextView
+                    android:text="Comptes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/edi_cheque" />
-
-                <Button
-                    android:text="Cheque"
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/txtcompte"
                     android:textStyle="bold"
-                    android:id="@+id/btn_cheque"
-                    android:layout_marginBottom="64dp"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:onClick="btn_cheque"
-                    />
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
 
@@ -138,23 +132,21 @@
                 android:layout_width="182dp"
                 android:layout_height="match_parent">
 
-                <EditText
+                <ImageButton
+                    android:layout_width="79dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/atb5"
+                    android:id="@+id/virementclik"
+                    android:onClick="virementclik"/>
+
+                <TextView
+                    android:text="Virements"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:id="@+id/edit_virment" />
-
-                <Button
-                    android:text="Virement"
-                    android:layout_width="154dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_viremet"
                     android:textStyle="bold"
-                    android:id="@+id/btn_virement"
-                    android:layout_marginBottom="64dp"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:onClick="btn_virement"
-                    />
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
         </LinearLayout>
