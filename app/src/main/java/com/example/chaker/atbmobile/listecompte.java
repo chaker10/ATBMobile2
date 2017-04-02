@@ -38,7 +38,7 @@ public class listecompte extends AppCompatActivity {
         ListView lsNews=(ListView) findViewById(R.id.LVNews);
         lsNews.setAdapter(myadapter);//intisal with data
 
-        String url="http://chakerrahmani.esy.es/compte.php?id_user=1";
+        String url="http://10.0.2.2/app/compte.php?id_user=1";
 
         new  MyAsyncTaskgetNews().execute(url);
     }
@@ -77,7 +77,7 @@ public class listecompte extends AppCompatActivity {
             final compte s = listnewsDataAdpater.get(position);
 
             TextView etID=(TextView)myView.findViewById(R.id.etID);
-            etID.setText( String.valueOf( s.id_compte));
+            etID.setText( String.valueOf( s.Id_compte));
             TextView etUserName=( TextView)myView.findViewById(R.id.etUserName);
             etUserName.setText(s.TYPE);
             TextView etPassword=( TextView)myView.findViewById(R.id.etPassword);
@@ -130,7 +130,7 @@ public class listecompte extends AppCompatActivity {
 
                 for (int i=0;i<json.length();i++){
                     JSONObject user= json.getJSONObject(i);
-                    listnewsData.add(new compte(user.getInt("id_compte"),user.getString("type"),user.getInt("Num_compte")));
+                    listnewsData.add(new compte(user.getInt("id_compte"),user.getString("TYPE"),user.getInt("Num_compte")));
                 }
                 myadapter.notifyDataSetChanged();
                 //display response data

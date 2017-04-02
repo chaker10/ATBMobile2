@@ -25,7 +25,9 @@
 
         <activity android:name=".loginActivity" />
         <activity android:name=".listecompte" />
-        <activity android:name=".compte"></activity>
+        <activity android:name=".CompteActivity" />
+        <activity android:name=".Localisation" />
+        <activity android:name=".Produits"></activity>
     </application>
 
 </manifest>

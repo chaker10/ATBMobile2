@@ -8,14 +8,14 @@ import android.os.Bundle;
 
     public class compte
     {
-        public   int id_compte ;
+        public   int Id_compte ;
         public  String TYPE;
         public  int Num_compte;
 
         //for news details
         compte( int id_compte, String TYPE,int Num_compte)
         {
-            this. id_compte=id_compte;
+            this. Id_compte=id_compte;
             this. TYPE=TYPE;
             this. Num_compte=Num_compte;
 

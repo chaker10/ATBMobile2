@@ -1,14 +1,14 @@
 package com.example.chaker.atbmobile;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
 import android.os.AsyncTask;
-
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -17,26 +17,30 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-public class loginActivity extends AppCompatActivity {
-    EditText etUserName;
-    EditText etPassword;
-    Button buLogin;
 
+public class CompteActivity extends AppCompatActivity {
+TextView num,id,type;
+String a; int id_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        etUserName=(EditText)findViewById(R.id.etUserName);
-        etPassword=(EditText)findViewById(R.id.etPassword);
-
+        setContentView(R.layout.activity_compte2);
+        id=(TextView) findViewById(R.id.id);
+        type=(TextView) findViewById(R.id.type);
+        Bundle b =getIntent().getExtras();
+       a =b.getString("cle");
+        id_user =Integer.parseInt(a);
+        num=(TextView)findViewById(R.id.num) ;
+     /*   type=(EditText)findViewById(R.id.edittypec);
+        numcompte=(EditText)findViewById(R.id.editnumc);*/
+        String url="http://192.168.8.101//app/compte.php?id_user="+id_user;
+        new MyAsyncTaskgetNews().execute(url);
 
     }
     public void buLogin(View view) {
 
-        String url="http://192.168.8.101/app/login.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString();
 
-        new MyAsyncTaskgetNews().execute(url);
-
+        //  new MyAsyncTaskgetNews().execute(url1);
     }
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
@@ -56,7 +60,7 @@ public class loginActivity extends AppCompatActivity {
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
                 //attente de 7000ms pour reponse
-                urlConnection.setConnectTimeout(7000);//regler le délai secondes
+                urlConnection.setConnectTimeout(7000);//regler le délai 5 secondes
 
                 try {
                     //obtenir les donnnes de reponse
@@ -76,28 +80,12 @@ public class loginActivity extends AppCompatActivity {
         protected void onProgressUpdate(String... progress) {
 
             try {
-                JSONObject json= new JSONObject(progress[0]);
 
-
-                //Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
-                if((json.getString("msg").equals("ok"))){
-
-                    Intent i=new Intent(loginActivity.this,Menu.class);
-                    i.putExtra("1",json.getString("idlogin"));
-                    startActivity(i);
-
-
-                    Toast.makeText(getApplicationContext(),"Bienvenue",Toast.LENGTH_LONG).show();
-                    etPassword.getText().clear();
-
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Veuillez sélectionner un nom d'utilisateur et mot de passe",Toast.LENGTH_LONG).show();}
-
-
-
-            }
-            catch (Exception ex) {
+                JSONObject json = new JSONObject(progress[0]);
+                id.setText(json.getString("id"));
+                num.setText(json.getString("num"));
+                type.setText(json.getString("type"));
+            } catch (Exception ex) {
             }
 
 
