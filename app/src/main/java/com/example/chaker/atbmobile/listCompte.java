@@ -1,12 +1,14 @@
 package com.example.chaker.atbmobile;
+
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,10 +24,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class listecompte extends AppCompatActivity {
+public class listCompte extends AppCompatActivity {
     //adapter class
-    ArrayList<compte> listnewsData = new ArrayList<compte>();
+    ArrayList<compte>    listnewsData = new ArrayList<compte>();
     MyCustomAdapter myadapter;
+    String a ;
+     int id_user;
+    int idcompte[] = new int[25];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +38,27 @@ public class listecompte extends AppCompatActivity {
 
 
         //add data and view it
-        // listnewsData.add(new AdapterItems(1,"developer"," develop apps"));
-        myadapter=new MyCustomAdapter(listnewsData);
         ListView lsNews=(ListView) findViewById(R.id.LVNews);
-        lsNews.setAdapter(myadapter);//intisal with data
+        myadapter=new MyCustomAdapter(listnewsData);
+        lsNews.setAdapter(myadapter);//remplir liste view
+    Bundle b =getIntent().getExtras();
+        a =b.getString("cle");
+        id_user =Integer.parseInt(a);
 
-        String url="http://10.0.2.2/app/compte.php?id_user=1";
 
-        new  MyAsyncTaskgetNews().execute(url);
+      String url="http://192.168.43.98/app/listcompte.php?id_user="+id_user;
+       new  MyAsyncTaskgetNews().execute(url);
+        lsNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int itemPosition     = i;
+               // Toast.makeText(getApplicationContext(),idcompte[itemPosition]+"",Toast.LENGTH_SHORT).show();
+               Intent go=new Intent(listCompte.this,CompteActivity.class);
+                go.putExtra("cle",idcompte[itemPosition]+"");
+                startActivity(go);
+
+            }
+        });
     }
 
 
@@ -72,15 +90,15 @@ public class listecompte extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent)
         {
             LayoutInflater mInflater = getLayoutInflater();
-            View myView = mInflater.inflate(R.layout.activity_compte, null);
+            View myView = mInflater.inflate(R.layout.layoutcompte, null);
 
-            final compte s = listnewsDataAdpater.get(position);
+            final   compte s = listnewsDataAdpater.get(position);
 
-            TextView etID=(TextView)myView.findViewById(R.id.etID);
+            TextView etID=( TextView)myView.findViewById(R.id.compte);
             etID.setText( String.valueOf( s.Id_compte));
-            TextView etUserName=( TextView)myView.findViewById(R.id.etUserName);
+            TextView etUserName=( TextView)myView.findViewById(R.id.type);
             etUserName.setText(s.TYPE);
-            TextView etPassword=( TextView)myView.findViewById(R.id.etPassword);
+            TextView etPassword=( TextView)myView.findViewById(R.id.numero);
             etPassword.setText(s.Num_compte);
             return myView;
         }
@@ -126,15 +144,17 @@ public class listecompte extends AppCompatActivity {
             try {
                 //JSONObject json= new JSONObject(progress[0]);
                 JSONArray json =new JSONArray(progress[0]);
-                Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
-                for (int i=0;i<json.length();i++){
+             for (int i=0;i<json.length();i++){
                     JSONObject user= json.getJSONObject(i);
-                    listnewsData.add(new compte(user.getInt("id_compte"),user.getString("TYPE"),user.getInt("Num_compte")));
-                }
+
+                  listnewsData.add(new compte(user.getInt("id_compte"),user.getString("TYPE"),user.getString("Num_compte")));
+                 idcompte[i]=user.getInt("id_compte");
+             }
                 myadapter.notifyDataSetChanged();
                 //display response data
-                Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
             } catch (Exception ex) {
             }
@@ -175,4 +195,3 @@ public class listecompte extends AppCompatActivity {
 
 
 }
-

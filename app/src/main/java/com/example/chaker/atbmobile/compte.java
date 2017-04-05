@@ -10,10 +10,10 @@ import android.os.Bundle;
     {
         public   int Id_compte ;
         public  String TYPE;
-        public  int Num_compte;
+        public  String Num_compte;
 
         //for news details
-        compte( int id_compte, String TYPE,int Num_compte)
+        compte( int id_compte, String TYPE,String Num_compte)
         {
             this. Id_compte=id_compte;
             this. TYPE=TYPE;

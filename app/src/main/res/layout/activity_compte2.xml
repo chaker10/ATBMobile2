@@ -19,7 +19,7 @@
         <TextView
             android:layout_margin="10dp"
             android:textSize="40px"
-            android:text="Numero de compte"
+            android:text="id_compte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView8" />
@@ -38,7 +38,7 @@
 
             android:layout_margin="10dp"
 
-            android:text="type"
+            android:text="Paiment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView10" />
@@ -55,7 +55,7 @@
             android:layout_margin="10dp"
             android:textSize="40px"
 
-            android:text="ID"
+            android:text="Virement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView12" />

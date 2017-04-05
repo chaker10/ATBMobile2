@@ -33,7 +33,7 @@ public class loginActivity extends AppCompatActivity {
     }
     public void buLogin(View view) {
 
-        String url="http://192.168.8.101/app/login.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString();
+        String url="http://192.168.43.98/app/login.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString();
 
         new MyAsyncTaskgetNews().execute(url);
 
@@ -48,25 +48,19 @@ public class loginActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
             try {
                 String NewsData;
-                //definir l'url avec lequel nous devons nous connecter
 
                 URL url = new URL(params[0]);
-                // faire la connexion  avec url et envoyer la demande
 
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
-                //attente de 7000ms pour reponse
-                urlConnection.setConnectTimeout(7000);//regler le délai secondes
+                urlConnection.setConnectTimeout(7000);
 
                 try {
-                    //obtenir les donnnes de reponse
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    //convertir fe flux en chaine
                     NewsData = ConvertInputToStringNoChange(in);
-                    //envoyer pour afficher les données
                     publishProgress(NewsData);
                 } finally {
-                    //connection
+
                     urlConnection.disconnect();
                 }
 
@@ -76,10 +70,10 @@ public class loginActivity extends AppCompatActivity {
         protected void onProgressUpdate(String... progress) {
 
             try {
-                JSONObject json= new JSONObject(progress[0]);
+                JSONObject json= new JSONObject(progress[0]);//recuper les resulita en json
 
 
-                //Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
+
                 if((json.getString("msg").equals("ok"))){
 
                     Intent i=new Intent(loginActivity.this,Menu.class);

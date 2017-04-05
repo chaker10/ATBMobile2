@@ -19,8 +19,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class CompteActivity extends AppCompatActivity {
-TextView num,id,type;
-String a; int id_user;
+    TextView num,id,type;
+    String a;
+    int id_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,19 +29,18 @@ String a; int id_user;
         id=(TextView) findViewById(R.id.id);
         type=(TextView) findViewById(R.id.type);
         Bundle b =getIntent().getExtras();
-       a =b.getString("cle");
+        a =b.getString("cle");
         id_user =Integer.parseInt(a);
         num=(TextView)findViewById(R.id.num) ;
-     /*   type=(EditText)findViewById(R.id.edittypec);
-        numcompte=(EditText)findViewById(R.id.editnumc);*/
-        String url="http://192.168.8.101//app/compte.php?id_user="+id_user;
+
+        String url="http://192.168.43.98/app/compte.php?id_user="+id_user;
         new MyAsyncTaskgetNews().execute(url);
 
     }
     public void buLogin(View view) {
 
 
-        //  new MyAsyncTaskgetNews().execute(url1);
+
     }
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
@@ -82,9 +82,9 @@ String a; int id_user;
             try {
 
                 JSONObject json = new JSONObject(progress[0]);
-                id.setText(json.getString("id"));
-                num.setText(json.getString("num"));
-                type.setText(json.getString("type"));
+                id.setText(json.getInt("vir")+"");
+                num.setText(json.getInt("id")+"");
+                type.setText(json.getString("pai")+"");
             } catch (Exception ex) {
             }
 

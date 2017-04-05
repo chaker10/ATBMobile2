@@ -21,7 +21,7 @@ public class Menu extends AppCompatActivity {
     }
     public void  compteclik(View v)
     {
-        Intent go=new Intent(Menu.this,CompteActivity.class);
+        Intent go=new Intent(Menu.this,listCompte.class);
         go.putExtra("cle",x);
         startActivity(go);
 

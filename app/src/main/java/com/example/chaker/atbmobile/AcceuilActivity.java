@@ -8,7 +8,6 @@ import android.widget.Button;
 
 
 public class AcceuilActivity extends AppCompatActivity {
-    public final static String message = "android.polytech.monappli.message";
 
     private Button btnloginacl;
    float x;
