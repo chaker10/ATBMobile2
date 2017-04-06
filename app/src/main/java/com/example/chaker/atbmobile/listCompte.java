@@ -25,7 +25,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class listCompte extends AppCompatActivity {
-    //adapter class
+
     ArrayList<compte>    listnewsData = new ArrayList<compte>();
     MyCustomAdapter myadapter;
     String a ;
@@ -37,10 +37,10 @@ public class listCompte extends AppCompatActivity {
         setContentView(R.layout.activity_listecompte);
 
 
-        //add data and view it
+
         ListView lsNews=(ListView) findViewById(R.id.LVNews);
         myadapter=new MyCustomAdapter(listnewsData);
-        lsNews.setAdapter(myadapter);//remplir liste view
+        lsNews.setAdapter(myadapter);
     Bundle b =getIntent().getExtras();
         a =b.getString("cle");
         id_user =Integer.parseInt(a);
@@ -110,29 +110,22 @@ public class listCompte extends AppCompatActivity {
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
-            //before works
+
         }
         @Override
         protected String  doInBackground(String... params) {
             // TODO Auto-generated method stub
             try {
                 String NewsData;
-                //define the url we have to connect with
                 URL url = new URL(params[0]);
-                //make connect with url and send request
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                //waiting for 7000ms for response
-                urlConnection.setConnectTimeout(7000);//set timeout to 5 seconds
+                urlConnection.setConnectTimeout(7000);
 
                 try {
-                    //getting the response data
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    //convert the stream to string
                     NewsData = ConvertInputToStringNoChange(in);
-                    //send to display data
                     publishProgress(NewsData);
                 } finally {
-                    //end connection
                     urlConnection.disconnect();
                 }
 
@@ -153,7 +146,6 @@ public class listCompte extends AppCompatActivity {
                  idcompte[i]=user.getInt("id_compte");
              }
                 myadapter.notifyDataSetChanged();
-                //display response data
               //  Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
             } catch (Exception ex) {
@@ -172,7 +164,6 @@ public class listCompte extends AppCompatActivity {
 
     }
 
-    // this method convert any stream to string
     public static String ConvertInputToStringNoChange(InputStream inputStream) {
 
         BufferedReader bureader=new BufferedReader( new InputStreamReader(inputStream));

@@ -60,7 +60,7 @@
                 android:onClick="btn_localistion"/>
 
             <Button
-                android:text="Contrat"
+                android:text="Contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"

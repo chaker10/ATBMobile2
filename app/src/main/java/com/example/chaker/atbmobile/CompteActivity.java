@@ -45,32 +45,26 @@ public class CompteActivity extends AppCompatActivity {
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
-            //before works
+
         }
         @Override
         protected String  doInBackground(String... params) {
             // TODO Auto-generated method stub
             try {
                 String NewsData;
-                //definir l'url avec lequel nous devons nous connecter
 
                 URL url = new URL(params[0]);
-                // faire la connexion  avec url et envoyer la demande
 
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
-                //attente de 7000ms pour reponse
-                urlConnection.setConnectTimeout(7000);//regler le délai 5 secondes
+                urlConnection.setConnectTimeout(7000);
 
                 try {
-                    //obtenir les donnnes de reponse
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    //convertir fe flux en chaine
                     NewsData = ConvertInputToStringNoChange(in);
-                    //envoyer pour afficher les données
                     publishProgress(NewsData);
                 } finally {
-                    //connection
+
                     urlConnection.disconnect();
                 }
 
@@ -101,7 +95,6 @@ public class CompteActivity extends AppCompatActivity {
 
     }
 
-    // cette methode convertit tous flux en chaine
     public static String ConvertInputToStringNoChange(InputStream inputStream) {
 
         BufferedReader bureader=new BufferedReader( new InputStreamReader(inputStream));

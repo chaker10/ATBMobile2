@@ -10,7 +10,7 @@ import android.widget.Button;
 public class AcceuilActivity extends AppCompatActivity {
 
     private Button btnloginacl;
-   float x;
+   String x,d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,13 @@ public class AcceuilActivity extends AppCompatActivity {
         Intent go=new Intent(AcceuilActivity.this,loginActivity.class);
         go.putExtra("cle",x);
         startActivity(go);
+    }
+    public void btn_localistion(View view)
+    {
+
+        Intent g =new Intent(this,Localisation.class);
+        g.putExtra("d",d);
+        startActivity(g);
     }
 
 }

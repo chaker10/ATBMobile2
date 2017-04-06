@@ -41,7 +41,7 @@ public class loginActivity extends AppCompatActivity {
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
-            //before works
+
         }
         @Override
         protected String  doInBackground(String... params) {
@@ -70,7 +70,7 @@ public class loginActivity extends AppCompatActivity {
         protected void onProgressUpdate(String... progress) {
 
             try {
-                JSONObject json= new JSONObject(progress[0]);//recuper les resulita en json
+                JSONObject json= new JSONObject(progress[0]);
 
 
 
@@ -107,7 +107,7 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-    // cette methode convertit tous flux en chaine
+
     public static String ConvertInputToStringNoChange(InputStream inputStream) {
 
         BufferedReader bureader=new BufferedReader( new InputStreamReader(inputStream));
