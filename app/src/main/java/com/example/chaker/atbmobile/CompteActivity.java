@@ -76,7 +76,7 @@ public class CompteActivity extends AppCompatActivity {
             try {
 
                 JSONObject json = new JSONObject(progress[0]);
-                id.setText(json.getInt("vir")+"");
+               // id.setText(json.getInt("vir")+"");
                 num.setText(json.getInt("id")+"");
                 type.setText(json.getString("pai")+"");
             } catch (Exception ex) {

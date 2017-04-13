@@ -31,7 +31,9 @@ public class Menu extends AppCompatActivity {
 
     }
     public void chequeclik(View v)
-    {
+    {    Intent go=new Intent(Menu.this,ChequeActivity.class);
+        go.putExtra("cle",x);
+        startActivity(go);
 
     }
     public void virementclik(View v)

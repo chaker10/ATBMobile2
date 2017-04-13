@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.os.AsyncTask;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,10 +33,18 @@ public class loginActivity extends AppCompatActivity {
 
     }
     public void buLogin(View view) {
+      String username= etUserName.getText().toString();
+        String password=etPassword.getText().toString();
+        if (TextUtils.isEmpty(username)){
+            etUserName.setError("sasiir champs");
+        }
+        else if (TextUtils.isEmpty(password)){
+            etPassword.setError("sasiir password");
+        }
+        else{
+        String url="http://192.168.43.98/app/login.php?UserName="+username +"&Password="+ password;
 
-        String url="http://192.168.43.98/app/login.php?UserName="+  etUserName.getText().toString()+"&Password="+ etPassword.getText().toString();
-
-        new MyAsyncTaskgetNews().execute(url);
+        new MyAsyncTaskgetNews().execute(url);}
 
     }
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {

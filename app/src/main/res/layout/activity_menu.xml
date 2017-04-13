@@ -16,15 +16,15 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1">
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/cap1"
+            app:srcCompat="@drawable/cap01"
             android:id="@+id/imageView"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -41,6 +41,7 @@
             android:textColorLink="@color/colorAccent"
             android:id="@+id/txt_benv"
             android:textStyle="bold"
+            android:textColor="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <LinearLayout
@@ -67,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtcheque5"
                     android:textStyle="bold"
-
+                     android:textColor="@color/colorAccent"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
             </LinearLayout>
@@ -91,6 +92,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtcarte2"
                     android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
 
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
@@ -122,6 +124,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtcompte"
                     android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
 
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
@@ -145,6 +148,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txt_viremet"
                     android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
 
                     android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 

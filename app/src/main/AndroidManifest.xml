@@ -22,13 +22,14 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <activity android:name=".listCompte"/>
 
+        <activity android:name=".listCompte" />
         <activity android:name=".loginActivity" />
         <activity android:name=".CompteActivity" />
         <activity android:name=".Localisation" />
         <activity android:name=".Produits" />
-
+        <activity android:name=".CarteActivity" />
+        <activity android:name=".ChequeActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cheque"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@drawable/atb2"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.chaker.atbmobile.ChequeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:id="@+id/radiobtngroup">
+
+            <TextView
+                android:text="type de chéque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="chéque barrés"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/radioGroup"
+                android:layout_toEndOf="@+id/radioGroup"
+
+                android:id="@+id/btnr0" />
+
+            <RadioButton
+                android:text="chéque non barrés"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:id="@+id/btnr1" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="nombre de page"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nombre" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:text="demande"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:layout_marginBottom="64dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/btncheque"
+
+               />
+
+
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>
