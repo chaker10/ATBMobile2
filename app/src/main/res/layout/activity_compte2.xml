@@ -18,23 +18,6 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_margin="10dp"
-            android:textSize="40px"
-            android:text="id_compte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView8" />
-
-        <TextView
-            android:textSize="40px"
-
-            android:layout_margin="10dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/num" />
-
-        <TextView
             android:textSize="40px"
 
             android:layout_margin="10dp"

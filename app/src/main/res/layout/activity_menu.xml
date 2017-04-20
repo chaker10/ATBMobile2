@@ -80,7 +80,7 @@
                 android:weightSum="1">
 
                 <ImageButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="82dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/cartre1"
                     android:id="@+id/carteclik"
@@ -136,7 +136,7 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:layout_width="79dp"
+                    android:layout_width="99dp"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/atb5"
                     android:id="@+id/virementclik"

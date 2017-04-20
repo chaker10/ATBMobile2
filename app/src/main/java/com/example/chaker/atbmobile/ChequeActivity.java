@@ -50,32 +50,24 @@ public class ChequeActivity extends AppCompatActivity {
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
-        // Drop down layout style - list view with radio button
+
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 
-        /*
-        recuperation id de utilisateur
-         */
+
         Bundle b =getIntent().getExtras();
         a =b.getString("cle");
         id_user =Integer.parseInt(a);
 
-/////////////////////////////////////////////
+
 
         demandebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-/*
-* selection id de button check
- */
+
            int selectedId = radiogroup.getCheckedRadioButtonId();
-                /*
-                *recuperation de nombre saisu
-                  en edit text
-                 */
+
            String nbre_page = spinner.getSelectedItem().toString();
 
                 if(selectedId == rd0.getId()){
@@ -111,29 +103,26 @@ public class ChequeActivity extends AppCompatActivity {
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
-            //before works
+
         }
         @Override
         protected String  doInBackground(String... params) {
             // TODO Auto-generated method stub
             try {
                 String NewsData;
-                //define the url we have to connect with
                 URL url = new URL(params[0]);
-                //make connect with url and send request
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                //waiting for 7000ms for response
-                urlConnection.setConnectTimeout(7000);//set timeout to 5 seconds
+                urlConnection.setConnectTimeout(7000);
 
                 try {
-                    //getting the response data
+
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    //convert the stream to string
+
                     NewsData = ConvertInputToStringNoChange(in);
-                    //send to display data
+
                     publishProgress(NewsData);
                 } finally {
-                    //end connection
+
                     urlConnection.disconnect();
                 }
 
@@ -144,7 +133,7 @@ public class ChequeActivity extends AppCompatActivity {
 
             try {
                 JSONObject json= new JSONObject(progress[0]);
-                //display response data
+
                 Toast.makeText(getApplicationContext(),json.getString("msg"),Toast.LENGTH_LONG).show();
 
             } catch (Exception ex) {
@@ -163,7 +152,7 @@ public class ChequeActivity extends AppCompatActivity {
 
     }
 
-    // this method convert any stream to string
+
     public static String ConvertInputToStringNoChange(InputStream inputStream) {
 
         BufferedReader bureader=new BufferedReader( new InputStreamReader(inputStream));

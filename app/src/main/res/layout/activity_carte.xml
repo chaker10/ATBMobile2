@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_carte"
     android:layout_width="match_parent"
@@ -8,57 +9,116 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.chaker.atbmobile.CarteActivity">
+    tools:context="com.example.chaker.atbmobile.CarteActivity"
+    android:background="@drawable/aa"
+    >
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
-            android:text="Numero carte"
-            android:layout_width="123dp"
+            android:text="Type de la carte"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" />
+            android:id="@+id/textView2"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="40px"
+            />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editcarte" />
+            android:id="@+id/typecarte" />
 
         <TextView
-            android:text="type carte"
+            android:textSize="40px"
+
+            android:text="Numéro de la carte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3" />
-
+            android:id="@+id/textView3"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/edittypec" />
+            android:id="@+id/numcarte" />
 
         <TextView
-            android:text="montant"
+            android:text="Compte associé"
+            android:textSize="40px"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/num" />
+            android:id="@+id/num"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editmontant" />
 
-        <Button
-            android:text="Transfer"
+            android:id="@+id/compteass" />
+
+        <TextView
+            android:text="Titulaire"
+            android:textSize="40px"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button" />
+            android:id="@+id/textView4"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:textSize="40px"
+
+            android:textStyle="bold"
+            android:id="@+id/tilutaire"
+            />
+
+        <TextView
+            android:text="Date d'échéance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            android:textSize="40px"
+
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+
+            android:id="@+id/dateechg" />
+
+        <Button
+            android:text="METTRE EN OPPOSITION CETTE CARTE"
+            android:layout_margin="100dp"
+
+            android:layout_height="50dp"
+            android:id="@+id/button"
+            android:layout_width="155dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
     </LinearLayout>
 </RelativeLayout>

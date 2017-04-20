@@ -28,6 +28,7 @@ public class CompteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_compte2);
         id=(TextView) findViewById(R.id.id);
         type=(TextView) findViewById(R.id.type);
+
         Bundle b =getIntent().getExtras();
         a =b.getString("cle");
         id_user =Integer.parseInt(a);
@@ -76,8 +77,8 @@ public class CompteActivity extends AppCompatActivity {
             try {
 
                 JSONObject json = new JSONObject(progress[0]);
-               // id.setText(json.getInt("vir")+"");
-                num.setText(json.getInt("id")+"");
+               id.setText(json.getInt("vir")+"");
+                //num.setText(json.getInt("id")+"");
                 type.setText(json.getString("pai")+"");
             } catch (Exception ex) {
             }
