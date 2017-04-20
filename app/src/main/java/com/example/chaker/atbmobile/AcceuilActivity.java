@@ -30,9 +30,13 @@ public class AcceuilActivity extends AppCompatActivity {
     public void btn_localistion(View view)
     {
 
-        Intent g =new Intent(this,Localisation.class);
+        Intent g =new Intent(AcceuilActivity.this,MapsActivity.class);
         g.putExtra("d",d);
         startActivity(g);
     }
 
+    public void contact(View view) {
+        Intent i =new Intent(AcceuilActivity.this,ContactActivity.class);
+        startActivity(i);
+    }
 }
