@@ -60,14 +60,17 @@ public class Menu extends AppCompatActivity {
 
     {
         for (int i=0;i<idcompte.length;i++){
-           // Toast.makeText(getApplication(),idcompte[i]+"",Toast.LENGTH_SHORT).show();
+           Toast.makeText(getApplication(),idcompte[i]+"",Toast.LENGTH_SHORT).show();
         }
+        Intent h =new Intent(Menu.this,VirementActivity.class);
+        h.putExtra("1",x);
+        startActivity(h);
+
 
 
     }
 
     private void virement() {
-
 
 
 
@@ -109,17 +112,16 @@ public class Menu extends AppCompatActivity {
                 JSONArray json =new JSONArray(progress[0]);
                 // Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
-                for (int i=0;i<json.length();i++){
-                    JSONObject user= json.getJSONObject(i);
+                for (int i=0;i<json.length();i++) {
+                    JSONObject user = json.getJSONObject(i);
 
-                   // listnewsData.add(new compte(user.getInt("id_compte"),user.getString("TYPE"),user.getString("Num_compte")));
-                    idcompte[i]=user.getString("Num_compte");
-                  //  Toast.makeText(getApplication(),idcompte[i]+"",Toast.LENGTH_SHORT).show();
-                             }
-                     Intent i =new Intent(Menu.this,VirementActivity.class);
-                       // i.putExtra("")
+                    // listnewsData.add(new compte(user.getInt("id_compte"),user.getString("TYPE"),user.getString("Num_compte")));
+                    idcompte[i] = user.getString("Num_compte");
+                    //  Toast.makeText(getApplication(),idcompte[i]+"",Toast.LENGTH_SHORT).show();
+                }
+
                        for (int j=0;j<idcompte.length-1;j++){
-                    Toast.makeText(getApplication(),idcompte[j]+"",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),idcompte[j]+"",Toast.LENGTH_SHORT).show();
                 }
 
                 //  Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
