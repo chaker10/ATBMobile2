@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chaker.atbmobile.AcceuilActivity"
-    android:background="@drawable/atb2">
+    android:background="@drawable/ecran">
 
     <LinearLayout
         android:orientation="horizontal"

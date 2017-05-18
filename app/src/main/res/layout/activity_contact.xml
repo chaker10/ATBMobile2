@@ -9,50 +9,74 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/ecran"
     tools:context="com.example.chaker.atbmobile.ContactActivity">
 
-    <TextView
-        android:text="Contatez-nous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="97dp"
-        android:layout_marginStart="97dp"
-        android:id="@+id/textView9" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:text="visiter website"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView9"
-        android:layout_alignLeft="@+id/textView9"
-        android:layout_alignStart="@+id/textView9"
-        android:layout_marginTop="25dp"
-        android:id="@+id/website"
-        android:onClick="visiterwebsite" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/atbb"
+            android:id="@+id/imageView3"
+            android:layout_weight="1.82" />
 
-    <Button
-        android:text="Envoyer email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/website"
-        android:layout_alignLeft="@+id/website"
-        android:layout_alignStart="@+id/website"
-        android:layout_marginTop="18dp"
-        android:id="@+id/email"
-        android:onClick="sendemail" />
+        <TextView
+            android:text="Contactez-nous"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="97dp"
+            android:layout_marginStart="97dp"
+            android:id="@+id/textView9"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:layout_weight="1" />
 
-    <Button
-        android:text="Appeler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
-        android:layout_alignLeft="@+id/email"
-        android:layout_alignStart="@+id/email"
-        android:layout_marginTop="31dp"
-        android:id="@+id/phone"
-        android:onClick="call" />
+        <TextView
+            android:text="Tunisie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Tunisie"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="12.29">
+
+            <ImageView
+                android:layout_width="74dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/www"
+                android:id="@+id/website"
+
+                android:onClick="visiterwebsite" />
+
+            <ImageView
+                android:layout_width="61dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/gmail"
+                android:id="@+id/email"
+
+                android:onClick="sendemail" />
+
+            <ImageView
+                android:layout_width="66dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/telphonapp"
+                android:id="@+id/phone"
+                android:onClick="call" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

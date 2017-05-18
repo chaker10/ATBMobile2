@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chaker.atbmobile.loginActivity"
-    android:background="@drawable/atb2">
+    android:background="@drawable/ecran">
 
     <LinearLayout
         android:orientation="vertical"
@@ -64,7 +64,7 @@
             android:id="@+id/etPassword"/>
 
         <Button
-            android:text="Login"
+            android:text="Entrer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_login"

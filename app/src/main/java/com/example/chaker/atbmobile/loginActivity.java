@@ -95,7 +95,7 @@ public class loginActivity extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Veuillez sélectionner un nom d'utilisateur et mot de passe",Toast.LENGTH_LONG).show();}
+                    Toast.makeText(getApplicationContext(),"login ou mot de passe incorrecte ",Toast.LENGTH_LONG).show();}
 
 
 
