@@ -52,7 +52,6 @@ public class listCompte extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 int itemPosition     = i;
-               // Toast.makeText(getApplicationContext(),idcompte[itemPosition]+"",Toast.LENGTH_SHORT).show();
                Intent go=new Intent(listCompte.this,CompteActivity.class);
                 go.putExtra("cle",idcompte[itemPosition]+"");
                 startActivity(go);
@@ -137,7 +136,6 @@ public class listCompte extends AppCompatActivity {
             try {
                 //JSONObject json= new JSONObject(progress[0]);
                 JSONArray json =new JSONArray(progress[0]);
-               // Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
              for (int i=0;i<json.length();i++){
                     JSONObject user= json.getJSONObject(i);
@@ -146,7 +144,7 @@ public class listCompte extends AppCompatActivity {
                  idcompte[i]=user.getInt("id_compte");
              }
                 myadapter.notifyDataSetChanged();
-              //  Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
+
 
             } catch (Exception ex) {
             }

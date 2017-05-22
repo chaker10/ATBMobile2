@@ -21,7 +21,7 @@ import java.net.URL;
 public class loginActivity extends AppCompatActivity {
     EditText etUserName;
     EditText etPassword;
-    Button buLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class loginActivity extends AppCompatActivity {
 
     }
     public void buLogin(View view) {
-      String username= etUserName.getText().toString();
+        String username= etUserName.getText().toString();
         String password=etPassword.getText().toString();
         if (TextUtils.isEmpty(username)){
             etUserName.setError("sasiir champs");
@@ -42,9 +42,9 @@ public class loginActivity extends AppCompatActivity {
             etPassword.setError("sasiir password");
         }
         else{
-        String url="http://192.168.43.98/app/login.php?UserName="+username +"&Password="+ password;
+            String url="http://192.168.43.98/app/login.php?UserName="+username +"&Password="+ password;
 
-        new MyAsyncTaskgetNews().execute(url);}
+            new MyAsyncTaskgetNews().execute(url);}
 
     }
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
