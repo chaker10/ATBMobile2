@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class Menu extends AppCompatActivity {
 
- String x;
+    String x;
     ArrayList<compte> listnewsData = new ArrayList<compte>();
     String idcompte[] = new String[2500];  String cmpte="";
     @Override
@@ -44,9 +44,9 @@ public class Menu extends AppCompatActivity {
 
     }
     public  void carteclik(View v){
-    Intent go=new Intent(Menu.this,Cates_Activity.class);
-    go.putExtra("cle",x);
-    startActivity(go);
+        Intent go=new Intent(Menu.this,Cates_Activity.class);
+        go.putExtra("cle",x);
+        startActivity(go);
 
 
     }
@@ -56,8 +56,30 @@ public class Menu extends AppCompatActivity {
         startActivity(go);
 
     }
+    /*public void virementclik(View v)
+
+    {
+        for (int i=0;i<idcompte.length;i++){
+            Toast.makeText(getApplication(),idcompte[i]+"",Toast.LENGTH_SHORT).show();
+        }
+        Intent h =new Intent(Menu.this,VirementActivity.class);
+        h.putExtra("1",x);
+        startActivity(h);
 
 
+
+    }
+
+    private void virement() {
+
+
+
+
+
+
+
+
+    }*/
     public class MyAsyncTaskgetNews extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
@@ -86,6 +108,7 @@ public class Menu extends AppCompatActivity {
         protected void onProgressUpdate(String... progress) {
 
             try {
+                //JSONObject json= new JSONObject(progress[0]);
                 JSONArray json =new JSONArray(progress[0]);
                 // Toast.makeText(getApplicationContext(),progress[0],Toast.LENGTH_LONG).show();
 
@@ -97,7 +120,7 @@ public class Menu extends AppCompatActivity {
                     //  Toast.makeText(getApplication(),idcompte[i]+"",Toast.LENGTH_SHORT).show();
                 }
 
-                       for (int j=0;j<idcompte.length-1;j++){
+                for (int j=0;j<idcompte.length-1;j++){
                     Toast.makeText(getApplicationContext(),idcompte[j]+"",Toast.LENGTH_SHORT).show();
                 }
 
